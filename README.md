@@ -1,16 +1,17 @@
-# 📊 Portfolio Tracker Excel
+# 📊 Portfolio Tracker Excel v2.0
 
-Un file Excel completo e professionale per tracciare il tuo portafoglio finanziario e gestire le finanze personali. Include tracking automatico dei prezzi tramite Google Sheets e formule pre-configurate per calcoli di P&L, rendimenti e patrimonio netto.
+Un file Excel completo e professionale per tracciare il tuo portafoglio finanziario e gestire le finanze personali. **Versione 2.0** con design moderno, palette colori professionale e dashboard migliorata con grafico a torta.
 
 ## ✨ Features
 
-- **📈 Tracking Automatico Prezzi**: Integrazione con GOOGLEFINANCE per aggiornamento real-time di azioni ed ETF
-- **💼 Gestione Completa Portafoglio**: Azioni, ETF, Bond, Fondi Comuni, Liquidità
-- **💰 Tracking Debiti**: Gestione mutui e altri debiti con calcolo rate
+- **🎨 Design Professionale v2.0**: Dashboard moderna con KPI in evidenza e palette colori accattivante
+- **📊 Grafico a Torta**: Visualizzazione immediata della composizione del portafoglio
+- **📈 Tracking Automatico Prezzi**: Integrazione con GOOGLEFINANCE per aggiornamento real-time
+- **💼 Foglio Investimenti Unificato**: Azioni, ETF e Bond in un unico foglio con colonna "Tipo"
+- **💰 Gestione Completa**: Fondi Comuni, Liquidità, Mutui e Debiti
 - **💵 Storico Stipendi**: Tracking mensile di stipendi lordi, netti e bonus
 - **📉 Analisi Performance**: Calcolo automatico di P&L, rendimenti percentuali e variazioni
 - **🧾 Gestione Tasse**: Tracking capital gain, dividendi e imposte
-- **📊 Dashboard Riepilogativa**: Vista immediata del patrimonio netto totale
 - **📅 Storico Patrimonio**: Snapshot mensile per analisi trend nel tempo
 
 ## 🚀 Quick Start
@@ -39,66 +40,72 @@ Le formule GOOGLEFINANCE si attiveranno automaticamente. Inizia inserendo i tuoi
 
 ## 📑 Struttura del File
 
-### 1️⃣ Dashboard
+### 1️⃣ Dashboard - NUOVO DESIGN! 🎨
 
-Panoramica generale del patrimonio con totali automatici per categoria:
+Dashboard professionale con **design moderno v2.0**:
 
-- Totale Attivo (Azioni + ETF + Bond + Fondi + Liquidità)
-- Totale Passivo (Mutui e Debiti)
-- **Patrimonio Netto** (Attivo - Passivo)
+**KPI Principali in evidenza:**
+- **PATRIMONIO NETTO** (grande, al centro)
+- TOTALE ATTIVO (verde)
+- TOTALE PASSIVO (rosso)
 
-Tutti i valori si aggiornano automaticamente dai fogli collegati.
+**Composizione Portafoglio:**
+- Tabella con valori e percentuali per categoria
+- **Spazio dedicato per GRAFICO A TORTA** (istruzioni incluse nel file)
+- Dettaglio investimenti suddiviso per Azioni, ETF, Bond
 
-### 2️⃣ Azioni
+**Caratteristiche:**
+- Palette colori professionale (blu, verde, arancione)
+- Bordi eleganti e celle colorate
+- Layout pulito e moderno
+- Tutti i valori si aggiornano automaticamente
 
-Tracking titoli azionari con aggiornamento automatico prezzi.
+### 2️⃣ Investimenti - UNIFICATO! 💼
+
+**NUOVO!** Azioni, ETF e Bond in un unico foglio per una gestione più semplice.
 
 **Colonne:**
-- Ticker (es. `AAPL`, `MSFT`, `BIT:ENI`)
-- Nome società
-- Quantità posseduta
-- Prezzo medio di carico
-- **Prezzo corrente** (automatico via GOOGLEFINANCE)
-- Valore carico e corrente
+- **Tipo** (Azione/ETF/Bond) - Con colori diversi per tipo
+- Ticker/ISIN (es. `AAPL`, `BIT:ENI`, `EPA:IWDA`)
+- Nome
+- Quantità/Nominale
+- Prezzo Carico e **Prezzo Corrente** (automatico via GOOGLEFINANCE)
+- Valore Carico e Valore Corrente
 - **P&L** (€ e %)
-- Dividendi ricevuti
-- Data acquisto e note
+- Dividendi/Cedole ricevuti
+- Data Acquisto
+- Scadenza (per bond)
+- Note
 
-**Esempio ticker:**
+**Esempi:**
+
+**Azioni:**
 ```
-AAPL          → Apple (NASDAQ)
-MSFT          → Microsoft (NASDAQ)
-BIT:ENI       → ENI (Borsa Italiana)
-BIT:UCG       → UniCredit (Borsa Italiana)
-```
-
-### 3️⃣ ETF
-
-Identico al foglio Azioni, ma dedicato agli ETF.
-
-**Esempio ticker ETF:**
-```
-VOO           → Vanguard S&P 500 ETF
-VTI           → Vanguard Total Stock Market
-EPA:IWDA      → iShares Core MSCI World (Euronext Paris)
-AMS:VWCE      → Vanguard FTSE All-World (Amsterdam)
+Tipo: Azione | Ticker: AAPL        → Apple (NASDAQ)
+Tipo: Azione | Ticker: BIT:ENI     → ENI (Borsa Italiana)
+Tipo: Azione | Ticker: BIT:UCG     → UniCredit (Borsa Italiana)
 ```
 
-### 4️⃣ Bond
+**ETF:**
+```
+Tipo: ETF    | Ticker: VOO         → Vanguard S&P 500 ETF
+Tipo: ETF    | Ticker: EPA:IWDA    → iShares Core MSCI World
+Tipo: ETF    | Ticker: AMS:VWCE    → Vanguard FTSE All-World
+```
 
-Gestione obbligazioni e titoli di stato.
+**Bond:**
+```
+Tipo: Bond   | ISIN: IT0005423745  → BTP Italia
+Tipo: Bond   | ISIN: XS1234567890  → Corporate Bond
+```
 
-**Campi principali:**
-- Nome/ISIN
-- Valore nominale
-- Prezzo di acquisto (%)
-- Data acquisto e scadenza
-- Cedola (%) e frequenza
-- Valore corrente
-- Rendimento a scadenza (YTM)
-- Cedole incassate
+**Vantaggi del foglio unificato:**
+- Vista completa di tutti gli investimenti in un colpo d'occhio
+- Filtri e ordinamenti più semplici
+- Confronto diretto tra asset class
+- Colori automatici per distinguere i tipi
 
-### 5️⃣ Fondi Comuni
+### 3️⃣ Fondi Comuni
 
 Tracking fondi di investimento.
 
@@ -109,7 +116,7 @@ Tracking fondi di investimento.
 - Valore totale
 - P&L (€ e %)
 
-### 6️⃣ Conti & Liquidità
+### 4️⃣ Conti & Liquidità
 
 Gestione conti correnti, depositi vincolati e liquidità.
 
@@ -125,7 +132,7 @@ Gestione conti correnti, depositi vincolati e liquidità.
 - Scadenza vincolo (se applicabile)
 - Interessi maturati
 
-### 7️⃣ Mutuo & Debiti
+### 5️⃣ Mutuo & Debiti
 
 Tracking di mutui, prestiti e altri debiti.
 
@@ -137,7 +144,7 @@ Tracking di mutui, prestiti e altri debiti.
 - Rata mensile
 - Date inizio e scadenza
 
-### 8️⃣ Stipendi
+### 6️⃣ Stipendi
 
 Storico mensile degli stipendi (pre-popolato con i 12 mesi dell'anno corrente).
 
@@ -148,7 +155,7 @@ Storico mensile degli stipendi (pre-popolato con i 12 mesi dell'anno corrente).
 - Bonus/Extra
 - **Totale Netto** (calcolato automaticamente)
 
-### 9️⃣ Spese Mensili (Opzionale)
+### 7️⃣ Spese Mensili (Opzionale)
 
 Tracking delle spese ricorrenti mensili.
 
@@ -163,7 +170,7 @@ Tracking delle spese ricorrenti mensili.
 - Altro
 - **TOTALE** (calcolato automaticamente)
 
-### 🔟 Tasse
+### 8️⃣ Tasse
 
 Gestione delle tasse su investimenti.
 
@@ -180,12 +187,14 @@ Gestione delle tasse su investimenti.
 - Importo pagato (calcolato automaticamente)
 - Data pagamento
 
-### 1️⃣1️⃣ Storico Patrimonio
+### 9️⃣ Storico Patrimonio
 
 Snapshot mensile del patrimonio per analisi performance nel tempo.
 
 **Dati tracciati:**
-- Valore Azioni, ETF, Bond, Fondi, Liquidità
+- Valore Investimenti (totale Azioni+ETF+Bond)
+- Fondi Comuni
+- Liquidità
 - Totale Attivo
 - Debiti
 - **Patrimonio Netto**
@@ -265,15 +274,17 @@ Snapshot mensile del patrimonio per analisi performance nel tempo.
 
 ### Esempio 1: Aggiungere un'azione
 
-1. Vai al foglio **Azioni**
+1. Vai al foglio **Investimenti**
 2. Inserisci nella prima riga vuota:
+   - **Tipo**: `Azione` (o `ETF` o `Bond`)
    - **Ticker**: `AAPL`
    - **Nome**: `Apple Inc.`
    - **Quantità**: `10`
    - **Prezzo Carico**: `150.00`
    - **Data Acquisto**: `01/01/2024`
-3. Il prezzo corrente si aggiornerà automaticamente
+3. Il prezzo corrente si aggiornerà automaticamente via GOOGLEFINANCE
 4. P&L verrà calcolato automaticamente
+5. La cella "Tipo" si colorerà automaticamente (blu per Azioni, verde per ETF, arancione per Bond)
 
 ### Esempio 2: Tracciare uno stipendio
 
