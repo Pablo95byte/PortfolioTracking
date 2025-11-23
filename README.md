@@ -64,6 +64,8 @@ Dashboard professionale con **design moderno v2.0**:
 
 **NUOVO!** Azioni, ETF e Bond in un unico foglio per una gestione più semplice.
 
+**Puoi aggiungere QUANTE RIGHE VUOI per ogni tipo** - il file include già 8 righe di esempio (3 azioni, 3 ETF, 2 bond) ma puoi aggiungerne infinite!
+
 **Colonne:**
 - **Tipo** (Azione/ETF/Bond) - Con colori diversi per tipo
 - Ticker/ISIN (es. `AAPL`, `BIT:ENI`, `EPA:IWDA`)
@@ -77,33 +79,34 @@ Dashboard professionale con **design moderno v2.0**:
 - Scadenza (per bond)
 - Note
 
-**Esempi:**
+**Righe di esempio già incluse nel file:**
 
-**Azioni:**
+**Azioni** (puoi averne quante vuoi):
 ```
-Tipo: Azione | Ticker: AAPL        → Apple (NASDAQ)
-Tipo: Azione | Ticker: BIT:ENI     → ENI (Borsa Italiana)
-Tipo: Azione | Ticker: BIT:UCG     → UniCredit (Borsa Italiana)
-```
-
-**ETF:**
-```
-Tipo: ETF    | Ticker: VOO         → Vanguard S&P 500 ETF
-Tipo: ETF    | Ticker: EPA:IWDA    → iShares Core MSCI World
-Tipo: ETF    | Ticker: AMS:VWCE    → Vanguard FTSE All-World
+Azione | AAPL      | Apple Inc.
+Azione | BIT:ENI   | Eni S.p.A.
+Azione | BIT:UCG   | UniCredit
 ```
 
-**Bond:**
+**ETF** (puoi averne quanti vuoi):
 ```
-Tipo: Bond   | ISIN: IT0005423745  → BTP Italia
-Tipo: Bond   | ISIN: XS1234567890  → Corporate Bond
+ETF    | VOO       | Vanguard S&P 500 ETF
+ETF    | EPA:IWDA  | iShares Core MSCI World
+ETF    | AMS:VWCE  | Vanguard FTSE All-World
+```
+
+**Bond** (puoi averne quanti vuoi):
+```
+Bond   | IT0005423745 | BTP Italia 2030
+Bond   |              | BTP 2.5% 2033
 ```
 
 **Vantaggi del foglio unificato:**
 - Vista completa di tutti gli investimenti in un colpo d'occhio
-- Filtri e ordinamenti più semplici
+- **Aggiungi tutte le righe che vuoi** - ogni asset nella sua riga
+- Filtri e ordinamenti più semplici (filtra per "Tipo" per vedere solo ETF, o solo Azioni)
 - Confronto diretto tra asset class
-- Colori automatici per distinguere i tipi
+- Colori automatici per distinguere i tipi (copia una riga esistente per mantenere i colori)
 
 ### 3️⃣ Fondi Comuni
 

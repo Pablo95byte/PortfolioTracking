@@ -285,35 +285,48 @@ def create_portfolio_tracker():
         cell.alignment = Alignment(horizontal="center", wrap_text=True)
         cell.border = border_thin
 
-    # Formule esempio riga 2
-    ws_inv.cell(row=2, column=6, value='=IF(A2="Bond","",IFERROR(GOOGLEFINANCE(B2,"price"),""))')
-    ws_inv.cell(row=2, column=7, value='=IF(D2<>"",D2*E2,"")')
-    ws_inv.cell(row=2, column=8, value='=IF(AND(D2<>"",F2<>""),D2*F2,"")')
-    ws_inv.cell(row=2, column=9, value='=IF(H2<>"",H2-G2,"")')
-    ws_inv.cell(row=2, column=10, value='=IF(G2<>0,I2/G2*100,"")')
+    # Aggiungi righe di esempio con diversi tipi di investimenti
+    examples = [
+        ("Azione", "AAPL", "Apple Inc.", "", "", "", "", "", "", "", "", "", "", ""),
+        ("Azione", "BIT:ENI", "Eni S.p.A.", "", "", "", "", "", "", "", "", "", "", ""),
+        ("Azione", "BIT:UCG", "UniCredit", "", "", "", "", "", "", "", "", "", "", ""),
+        ("ETF", "VOO", "Vanguard S&P 500 ETF", "", "", "", "", "", "", "", "", "", "", ""),
+        ("ETF", "EPA:IWDA", "iShares Core MSCI World", "", "", "", "", "", "", "", "", "", "", ""),
+        ("ETF", "AMS:VWCE", "Vanguard FTSE All-World", "", "", "", "", "", "", "", "", "", "", ""),
+        ("Bond", "IT0005423745", "BTP Italia 2030", "", "", "", "", "", "", "", "", "", "31/12/2030", ""),
+        ("Bond", "", "BTP 2.5% 2033", "", "", "", "", "", "", "", "", "", "01/12/2033", ""),
+    ]
 
-    # Aggiungi alcuni esempi
-    ws_inv.cell(row=2, column=1, value="Azione")
-    ws_inv.cell(row=3, column=1, value="ETF")
-    ws_inv.cell(row=4, column=1, value="Bond")
+    # Inserisci esempi e formule
+    for idx, example in enumerate(examples, 2):
+        row_num = idx
+        # Inserisci i dati di esempio
+        for col_idx, value in enumerate(example, 1):
+            ws_inv.cell(row=row_num, column=col_idx, value=value)
+
+        # Aggiungi formule per ogni riga
+        ws_inv.cell(row=row_num, column=6, value=f'=IF(A{row_num}="Bond","",IFERROR(GOOGLEFINANCE(B{row_num},"price"),""))')
+        ws_inv.cell(row=row_num, column=7, value=f'=IF(D{row_num}<>"",D{row_num}*E{row_num},"")')
+        ws_inv.cell(row=row_num, column=8, value=f'=IF(AND(D{row_num}<>"",F{row_num}<>""),D{row_num}*F{row_num},"")')
+        ws_inv.cell(row=row_num, column=9, value=f'=IF(H{row_num}<>"",H{row_num}-G{row_num},"")')
+        ws_inv.cell(row=row_num, column=10, value=f'=IF(G{row_num}<>0,I{row_num}/G{row_num}*100,"")')
+
+        # Colora la cella Tipo in base al valore
+        tipo_cell = ws_inv.cell(row=row_num, column=1)
+        if tipo_cell.value == "Azione":
+            tipo_cell.fill = PatternFill(start_color="DBEAFE", end_color="DBEAFE", fill_type="solid")
+            tipo_cell.font = Font(bold=True, color=COLOR_SECONDARY)
+        elif tipo_cell.value == "ETF":
+            tipo_cell.fill = PatternFill(start_color="D1FAE5", end_color="D1FAE5", fill_type="solid")
+            tipo_cell.font = Font(bold=True, color=COLOR_SUCCESS)
+        elif tipo_cell.value == "Bond":
+            tipo_cell.fill = PatternFill(start_color="FEF3C7", end_color="FEF3C7", fill_type="solid")
+            tipo_cell.font = Font(bold=True, color=COLOR_WARNING)
 
     # Larghezze colonne
     widths_inv = [12, 15, 25, 16, 16, 16, 16, 16, 14, 11, 18, 14, 14, 30]
     for idx, width in enumerate(widths_inv, 1):
         ws_inv.column_dimensions[get_column_letter(idx)].width = width
-
-    # Colora le celle Tipo in base al valore
-    for row_num in range(2, 5):
-        cell = ws_inv.cell(row=row_num, column=1)
-        if cell.value == "Azione":
-            cell.fill = PatternFill(start_color="DBEAFE", end_color="DBEAFE", fill_type="solid")
-            cell.font = Font(bold=True, color=COLOR_SECONDARY)
-        elif cell.value == "ETF":
-            cell.fill = PatternFill(start_color="D1FAE5", end_color="D1FAE5", fill_type="solid")
-            cell.font = Font(bold=True, color=COLOR_SUCCESS)
-        elif cell.value == "Bond":
-            cell.fill = PatternFill(start_color="FEF3C7", end_color="FEF3C7", fill_type="solid")
-            cell.font = Font(bold=True, color=COLOR_WARNING)
 
     # ========== FONDI COMUNI ==========
     ws_fondi = wb.create_sheet("Fondi Comuni")
